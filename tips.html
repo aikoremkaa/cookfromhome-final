@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Tips | CookFromHome
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/final.css"
+    >
+
+</head>
+
+<body>
+
+<a
+    class="skip-link"
+    href="#main-content"
+>
+    Skip to main content
+</a>
+
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+            CookFrom<span>Home</span>
+        </a>
+
+
+        <div class="header-actions">
+
+            <nav
+                class="site-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="recipes.html">
+                    Recipes
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a
+                    class="active"
+                    aria-current="page"
+                    href="tips.html"
+                >
+                    Tips
+                </a>
+
+                <a href="pantry.html">
+                    Pantry
+                </a>
+
+                <a href="forms.html">
+                    Forms
+                </a>
+
+            </nav>
+
+
+            <button
+                id="global-theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-pressed="false"
+            >
+                ☾ Dark
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main
+    id="main-content"
+    class="page"
+>
+
+<div class="container">
+
+
+    <header class="page-heading">
+
+        <span class="page-eyebrow">
+            KITCHEN NOTES
+        </span>
+
+        <h1 class="page-title">
+            Small habits. Better cooking.
+        </h1>
+
+        <p class="page-subtitle">
+            Filter practical advice by topic,
+            open the explanation behind each
+            tip, or let the page choose one
+            for you.
+        </p>
+
+    </header>
+
+
+    <section class="tips-top-grid">
+
+
+        <img
+            class="tips-photo"
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&auto=format&fit=crop"
+            alt="Home kitchen with fresh ingredients"
+        >
+
+
+        <div class="tips-tools">
+
+            <span class="page-eyebrow">
+                NEED ONE IDEA?
+            </span>
+
+            <h2>
+                Let the kitchen choose.
+            </h2>
+
+            <p>
+                Use Surprise me to jump to
+                one visible tip at random.
+            </p>
+
+            <button
+                id="random-tip"
+                class="btn btn-tomato"
+                type="button"
+            >
+                Surprise me
+            </button>
+
+            <p
+                id="random-tip-result"
+                aria-live="polite"
+            >
+                No tip selected yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <div
+        class="tip-filters"
+        role="group"
+        aria-label="Filter tips"
+    >
+
+        <button
+            class="tip-filter active"
+            data-category="all"
+            aria-pressed="true"
+            type="button"
+        >
+            All
+        </button>
+
+        <button
+            class="tip-filter"
+            data-category="storage"
+            aria-pressed="false"
+            type="button"
+        >
+            Storage
+        </button>
+
+        <button
+            class="tip-filter"
+            data-category="saving"
+            aria-pressed="false"
+            type="button"
+        >
+            Saving
+        </button>
+
+        <button
+            class="tip-filter"
+            data-category="cooking"
+            aria-pressed="false"
+            type="button"
+        >
+            Cooking
+        </button>
+
+        <button
+            class="tip-filter"
+            data-category="planning"
+            aria-pressed="false"
+            type="button"
+        >
+            Planning
+        </button>
+
+    </div>
+
+
+    <div class="tip-meta-row">
+
+        <span id="tips-count">
+            8 tips shown
+        </span>
+
+        <span
+            id="tips-empty"
+            hidden
+        >
+            No tips in this category.
+        </span>
+
+    </div>
+
+
+    <section class="tips-grid-final">
+
+
+        <article
+            class="tip-card-final"
+            data-category="saving"
+        >
+
+            <span class="tip-category">
+                Saving · Tip 01
+            </span>
+
+            <h2>
+                Shop your kitchen first.
+            </h2>
+
+            <p>
+                Check the fridge, freezer
+                and pantry before buying
+                more.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                You avoid buying duplicates
+                and naturally build meals
+                around food that is already
+                paid for.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="storage"
+        >
+
+            <span class="tip-category">
+                Storage · Tip 02
+            </span>
+
+            <h2>
+                Keep older food visible.
+            </h2>
+
+            <p>
+                Put ingredients that should
+                be used soon where you can
+                see them.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                Food hidden at the back of
+                the fridge is easy to forget.
+                Visibility makes it more
+                likely to be used in time.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="planning"
+        >
+
+            <span class="tip-category">
+                Planning · Tip 03
+            </span>
+
+            <h2>
+                Cook once, eat twice.
+            </h2>
+
+            <p>
+                Prepare an extra portion of
+                rice, vegetables or protein
+                for tomorrow.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                One extra portion turns
+                tomorrow's meal into assembly
+                instead of starting from zero.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="cooking"
+        >
+
+            <span class="tip-category">
+                Cooking · Tip 04
+            </span>
+
+            <h2>
+                Simple meals are still good meals.
+            </h2>
+
+            <p>
+                Everyday cooking does not need
+                ten ingredients or complicated
+                techniques.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                A small number of well-matched
+                ingredients is easier to cook
+                consistently and usually creates
+                less waste.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="storage"
+        >
+
+            <span class="tip-category">
+                Storage · Tip 05
+            </span>
+
+            <h2>
+                Freeze it before you lose it.
+            </h2>
+
+            <p>
+                Bread, cooked meals and many
+                ingredients can be frozen before
+                they spoil.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                Freezing gives food more time
+                and lets you save useful portions
+                for a day when you do not want
+                to cook.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="cooking"
+        >
+
+            <span class="tip-category">
+                Cooking · Tip 06
+            </span>
+
+            <h2>
+                Recipes are guides, not laws.
+            </h2>
+
+            <p>
+                Learn simple substitutions so
+                you can cook with ingredients
+                already at home.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                Flexible cooking makes the recipe
+                fit your kitchen instead of forcing
+                your kitchen to fit the recipe.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="planning"
+        >
+
+            <span class="tip-category">
+                Planning · Tip 07
+            </span>
+
+            <h2>
+                Plan the fragile food first.
+            </h2>
+
+            <p>
+                Use fresh herbs, leafy vegetables
+                and opened products earlier in
+                the week.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                Ingredients with the shortest
+                useful life get priority, while
+                rice, pasta and frozen foods can
+                wait.
+            </div>
+
+        </article>
+
+
+        <article
+            class="tip-card-final"
+            data-category="saving"
+        >
+
+            <span class="tip-category">
+                Saving · Tip 08
+            </span>
+
+            <h2>
+                Give leftovers a second job.
+            </h2>
+
+            <p>
+                Yesterday's vegetables can become
+                soup, fried rice, pasta or a
+                sandwich filling.
+            </p>
+
+            <button
+                class="tip-more"
+                type="button"
+                aria-expanded="false"
+            >
+                Why this helps
+            </button>
+
+            <div class="tip-details">
+                Reusing cooked components saves
+                both money and preparation time
+                without repeating the exact same
+                meal.
+            </div>
+
+        </article>
+
+    </section>
+
+</div>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container footer-final">
+
+        <div>
+
+            <a
+                class="footer-brand"
+                href="index.html"
+            >
+                CookFromHome
+            </a>
+
+            <p>
+                Better habits, easier kitchen.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="recipes.html">
+                Recipes
+            </a>
+
+            <a href="planner.html">
+                Planner
+            </a>
+
+            <a href="pantry.html">
+                Pantry
+            </a>
+
+        </div>
+
+        <p>
+            Web Technologies · 2026
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/vendor/jquery-3.6.0.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/tips.js"></script>
+
+</body>
+</html>

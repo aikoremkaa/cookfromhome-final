@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore simple homemade meals, filter by category and follow eight step-by-step recipes.">
+    <title>Recipes | CookFromHome</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/final.css">
+    <link rel="stylesheet" href="css/recipes.css">
+
+</head>
+<script src="js/vendor/jquery-3.6.0.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/recipes-jquery.js"></script>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Shared header: keep the team's existing design. -->
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+            CookFrom<span>Home</span>
+        </a>
+
+
+        <div class="header-actions">
+
+            <nav
+                class="site-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    class="active"
+                    aria-current="page"
+                    href="recipes.html"
+                >
+                    Recipes
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="tips.html">
+                    Tips
+                </a>
+
+                <a href="pantry.html">
+                    Pantry
+                </a>
+
+                <a href="forms.html">
+                    Forms
+                </a>
+
+            </nav>
+
+
+            <button
+                id="global-theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-pressed="false"
+            >
+                ☾ Dark
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+    <main class="recipes-page" id="main-content">
+        <!-- 1. Intro: a unique two-column hero. -->
+        <section class="recipes-hero" aria-labelledby="recipes-title">
+            <div class="recipes-hero-copy">
+                <span class="recipes-eyebrow">WELCOME TO OUR KITCHEN</span>
+                <h1 id="recipes-title">Your next favorite recipe starts here</h1>
+                <p>Explore easy homemade meals for every part of your day. Choose a category, find a dish and open its ingredients and instructions without leaving the page.</p>
+                <a href="#recipes-catalog" class="recipes-button">Explore recipes</a>
+                <div class="recipes-perks" aria-label="Recipe benefits">
+                    <span>Everyday ingredients</span>
+                    <span>Easy steps</span>
+                    <span>Made at home</span>
+                </div>
+            </div>
+            <img class="recipes-hero-photo"
+                 src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1100&amp;auto=format&amp;fit=crop"
+                 alt="Fresh homemade food served with colorful vegetables" width="1100" height="880">
+        </section>
+
+        <!-- 2. Catalogue: combined jQuery search and category filters, eight recipe cards. -->
+        <section class="recipes-catalog" id="recipes-catalog" aria-labelledby="catalog-title">
+            <div class="recipes-section-title">
+                <span class="recipes-eyebrow">EXPLORE THE COLLECTION</span>
+                <h2 id="catalog-title">What are you cooking today?</h2>
+                <p>Browse eight recipes. Search by name or ingredients and filter by meal type. Select “View full recipe” for the full instructions.</p>
+            </div>
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-all" value="all" checked>
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-breakfast" value="breakfast">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-lunch" value="lunch">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-dinner" value="dinner">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-dessert" value="dessert">
+            <div class="recipes-filters" role="group" aria-label="Filter recipes by category">
+                <label for="recipes-all">All recipes</label>
+                <label for="recipes-breakfast">Breakfast</label>
+                <label for="recipes-lunch">Lunch</label>
+                <label for="recipes-dinner">Dinner</label>
+                <label for="recipes-dessert">Desserts</label>
+            </div>
+            <div class="recipes-search-controls">
+                <div class="recipes-search-field">
+                    <label for="recipes-search">Search recipes</label>
+                    <input type="search" id="recipes-search" placeholder="Try pasta, egg, salad..." autocomplete="off">
+                </div>
+                <button type="button" id="recipes-clear-filters" class="recipes-clear-button">Clear filters</button>
+            </div>
+            <p id="recipes-results-count" class="recipes-results-count" role="status" aria-live="polite">Showing 8 of 8 recipes</p>
+            <p id="recipes-no-results" class="recipes-no-results" hidden>No results found. Try another search or category.</p>
+            <div class="recipes-grid">
+                <article class="recipes-card" id="recipe-pancakes" data-category="breakfast">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Homemade pancakes with fruit" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Breakfast</span>
+                        <h3>Fluffy Pancakes</h3>
+                        <p>Soft golden pancakes for a cozy morning.</p>
+                        <div class="recipes-meta">
+                            <span>20 min</span>
+                            <span>Easy</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>125 g all-purpose flour</li>
+                                    <li>1 tbsp sugar</li>
+                                    <li>1 tsp baking powder</li>
+                                    <li>1 egg</li>
+                                    <li>180 ml milk</li>
+                                    <li>1 tbsp melted butter, plus extra for the pan</li>
+                                    <li>Berries or honey to serve</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Combine flour, sugar and baking powder in a bowl.</li>
+                                    <li>Whisk the egg, milk and melted butter in another bowl.</li>
+                                    <li>Pour the wet ingredients into the dry ingredients and mix gently.</li>
+                                    <li>Heat a lightly buttered pan over medium heat and add small portions of batter.</li>
+                                    <li>Cook until bubbles appear, flip and cook until golden on both sides.</li>
+                                    <li>Serve warm with berries or honey.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-avocado" data-category="breakfast">
+                    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Avocado toast topped with eggs" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Breakfast</span>
+                        <h3>Avocado Toast</h3>
+                        <p>Crunchy toast topped with avocado and eggs.</p>
+                        <div class="recipes-meta">
+                            <span>10 min</span>
+                            <span>Easy</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>2 slices of bread</li>
+                                    <li>1 ripe avocado</li>
+                                    <li>2 eggs</li>
+                                    <li>1 tsp lemon juice</li>
+                                    <li>1 tsp olive oil</li>
+                                    <li>Salt and pepper</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Toast the bread until crisp.</li>
+                                    <li>Mash the avocado with lemon juice, salt and pepper.</li>
+                                    <li>Heat olive oil in a non-stick pan and cook the eggs to your preference.</li>
+                                    <li>Spread the avocado on the toast.</li>
+                                    <li>Add an egg to each slice and serve immediately.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-salad" data-category="lunch">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Colorful bowl of fresh vegetables" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Lunch</span>
+                        <h3>Fresh Garden Salad</h3>
+                        <p>Fresh vegetables tossed in a bright lemon dressing.</p>
+                        <div class="recipes-meta">
+                            <span>15 min</span>
+                            <span>Easy</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>1 cucumber</li>
+                                    <li>2 tomatoes</li>
+                                    <li>1 carrot</li>
+                                    <li>4 lettuce leaves</li>
+                                    <li>2 tbsp olive oil</li>
+                                    <li>1 tbsp lemon juice</li>
+                                    <li>Salt and pepper</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Wash and dry all the vegetables.</li>
+                                    <li>Slice the cucumber and tomatoes; grate the carrot.</li>
+                                    <li>Tear the lettuce and add it to a large bowl with the other vegetables.</li>
+                                    <li>Whisk olive oil, lemon juice, salt and pepper together.</li>
+                                    <li>Pour over the salad, toss gently and serve.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-fried-rice" data-category="lunch">
+                    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Vegetable fried rice in a bowl" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Lunch</span>
+                        <h3>Vegetable Fried Rice</h3>
+                        <p>A quick lunch using cooked rice and colorful vegetables.</p>
+                        <div class="recipes-meta">
+                            <span>25 min</span>
+                            <span>Easy</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>2 cups cooked and cooled rice</li>
+                                    <li>1 carrot, diced</li>
+                                    <li>1/2 bell pepper, diced</li>
+                                    <li>1/2 cup green peas</li>
+                                    <li>1/2 onion, chopped</li>
+                                    <li>1 tbsp soy sauce</li>
+                                    <li>1 tbsp vegetable oil</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Prepare the vegetables and use previously cooked, properly chilled rice.</li>
+                                    <li>Heat the oil in a large pan over medium-high heat.</li>
+                                    <li>Cook the onion and carrot for 3 minutes, then add the pepper and peas.</li>
+                                    <li>Add the rice and stir-fry until thoroughly heated.</li>
+                                    <li>Stir in the soy sauce and serve hot.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-pasta" data-category="dinner">
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Pasta served with a creamy sauce" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Dinner</span>
+                        <h3>Creamy Mushroom Pasta</h3>
+                        <p>Comforting pasta coated in a silky mushroom sauce.</p>
+                        <div class="recipes-meta">
+                            <span>25 min</span>
+                            <span>Medium</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>200 g pasta</li>
+                                    <li>150 g mushrooms, sliced</li>
+                                    <li>100 ml cooking cream</li>
+                                    <li>2 garlic cloves, minced</li>
+                                    <li>1 tbsp olive oil</li>
+                                    <li>Salt and pepper</li>
+                                    <li>Grated cheese, optional</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Cook the pasta in salted water until al dente; reserve a little pasta water.</li>
+                                    <li>Heat olive oil in a pan and sauté mushrooms until golden.</li>
+                                    <li>Add garlic and cook for 30 seconds, then stir in the cream.</li>
+                                    <li>Season the sauce with salt and pepper.</li>
+                                    <li>Add the drained pasta and a splash of pasta water; toss until coated.</li>
+                                    <li>Serve warm with grated cheese if you like.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-salmon" data-category="dinner">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Salmon served with herbs and vegetables" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Dinner</span>
+                        <h3>Baked Salmon</h3>
+                        <p>Tender salmon with fresh lemon and herbs.</p>
+                        <div class="recipes-meta">
+                            <span>30 min</span>
+                            <span>Medium</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>2 salmon fillets (about 150 g each)</li>
+                                    <li>1 lemon</li>
+                                    <li>1 tbsp olive oil</li>
+                                    <li>1 garlic clove, minced</li>
+                                    <li>1 tsp dried herbs</li>
+                                    <li>Salt and pepper</li>
+                                    <li>Vegetables to serve</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Preheat the oven to 200°C and line a baking dish.</li>
+                                    <li>Place the fillets in the dish and drizzle with olive oil and lemon juice.</li>
+                                    <li>Sprinkle with garlic, herbs, salt and pepper.</li>
+                                    <li>Bake for approximately 12–15 minutes, depending on thickness, until cooked through.</li>
+                                    <li>Serve with vegetables and lemon wedges.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-cookies" data-category="dessert">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Freshly baked homemade cookies" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Dessert</span>
+                        <h3>Homemade Cookies</h3>
+                        <p>Golden cookies with soft centers and chocolate chips.</p>
+                        <div class="recipes-meta">
+                            <span>30 min</span>
+                            <span>Easy</span>
+                            <span>12 cookies</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>150 g all-purpose flour</li>
+                                    <li>100 g softened butter</li>
+                                    <li>80 g sugar</li>
+                                    <li>1 egg</li>
+                                    <li>1/2 tsp baking soda</li>
+                                    <li>80 g chocolate chips</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Preheat the oven to 180°C and line a baking sheet.</li>
+                                    <li>Cream the butter and sugar, then beat in the egg.</li>
+                                    <li>Stir in the flour and baking soda until just combined.</li>
+                                    <li>Fold in the chocolate chips and spoon 12 portions onto the sheet.</li>
+                                    <li>Bake for 10–12 minutes until the edges are golden.</li>
+                                    <li>Let cool on the baking sheet for 5 minutes before moving.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="recipes-card" id="recipe-parfait" data-category="dessert">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=720&amp;auto=format&amp;fit=crop"
+                         alt="Yogurt layered with berries" loading="lazy" width="720" height="480">
+                    <div class="recipes-card-body">
+                        <span class="recipes-tag">Dessert</span>
+                        <h3>Berry Yogurt Parfait</h3>
+                        <p>Creamy yogurt layered with berries and crunchy granola.</p>
+                        <div class="recipes-meta">
+                            <span>10 min</span>
+                            <span>Easy</span>
+                            <span>2 servings</span>
+                        </div>
+                        <details class="recipes-details">
+                            <summary>View full recipe</summary>
+                            <div class="recipes-details-body">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>200 g Greek yogurt</li>
+                                    <li>100 g fresh berries</li>
+                                    <li>60 g granola</li>
+                                    <li>1 tsp honey, optional</li>
+                                </ul>
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Rinse and dry the berries.</li>
+                                    <li>Spoon a layer of yogurt into each serving glass.</li>
+                                    <li>Add a layer of granola and berries.</li>
+                                    <li>Repeat the layers until the glasses are filled.</li>
+                                    <li>Drizzle with honey if desired and serve immediately.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Featured section: extra advice instead of repeating the pasta method. -->
+        <section class="recipes-featured" aria-labelledby="featured-title">
+            <div class="recipes-section-title">
+                <span class="recipes-eyebrow">FEATURED RECIPE & COOKING ADVICE</span>
+                <h2 id="featured-title">Pasta Love: Little Tips, Big Flavor</h2>
+                <p>Our featured pasta deserves a little extra attention. Try these three chef's tips to bring more flavor and a smoother texture to your next dinner.</p>
+            </div>
+            <div class="recipes-featured-layout">
+                <img class="recipes-featured-photo"
+                     src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1000&amp;auto=format&amp;fit=crop"
+                     alt="Pasta ready to serve" loading="lazy" width="1000" height="800">
+                <div class="recipes-featured-copy">
+                    <span class="recipes-tag">Dinner · 25 minutes</span>
+                    <h3>Creamy Mushroom Pasta</h3>
+                    <p>The full recipe is in the Dinner section above. Here are three extra cooking tips to make your pasta taste even better.</p>
+                    <h4>Chef's tips</h4>
+                    <div class="recipes-tip-grid">
+                        <article class="recipes-tip">
+                            <span>01</span>
+                            <h5>Brown the mushrooms</h5>
+                            <p>Cook them in a hot pan without crowding them so they develop a rich, savory flavor.</p>
+                        </article>
+                        <article class="recipes-tip">
+                            <span>02</span>
+                            <h5>Save pasta water</h5>
+                            <p>Add a little starchy cooking water when mixing the pasta and sauce for a smoother finish.</p>
+                        </article>
+                        <article class="recipes-tip">
+                            <span>03</span>
+                            <h5>Finish on low heat</h5>
+                            <p>Once you add the cream, keep the heat gentle so the sauce stays silky.</p>
+                        </article>
+                    </div>
+                    <p class="recipes-serving"><strong>Serving idea:</strong> Add fresh parsley, black pepper and a little grated cheese just before serving.</p>
+                    <a class="recipes-text-link" href="#recipes-catalog">Back to the recipe catalogue ↑</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shared footer: keep the team's existing design. -->
+    <footer>
+        <div class="container footer-content">
+            <h2>CookFromHome</h2>
+            <p>Cook by yourself :3</p>
+        </div>
+    </footer>
+    <!-- jQuery must load before the external script. Both scripts are deferred. -->
+    <script src="js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="js/recipes-jquery.js" defer></script>
+</body>
+</html>

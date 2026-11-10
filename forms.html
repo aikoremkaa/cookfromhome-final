@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Forms | CookFromHome
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/final.css"
+    >
+
+</head>
+
+<body>
+
+<a
+    class="skip-link"
+    href="#main-content"
+>
+    Skip to main content
+</a>
+
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+            CookFrom<span>Home</span>
+        </a>
+
+
+        <div class="header-actions">
+
+            <nav
+                class="site-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="recipes.html">
+                    Recipes
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="tips.html">
+                    Tips
+                </a>
+
+                <a href="pantry.html">
+                    Pantry
+                </a>
+
+                <a
+                    class="active"
+                    aria-current="page"
+                    href="forms.html"
+                >
+                    Forms
+                </a>
+
+            </nav>
+
+
+            <button
+                id="global-theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-pressed="false"
+            >
+                ☾ Dark
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main
+    id="main-content"
+    class="page"
+>
+
+<div class="container">
+
+
+    <header class="page-heading">
+
+        <span class="page-eyebrow">
+            CONTACT & ACCOUNT
+        </span>
+
+        <h1 class="page-title">
+            Simple forms. Clear feedback.
+        </h1>
+
+        <p class="page-subtitle">
+            Both forms use jQuery validation
+            and show specific feedback without
+            reloading the page.
+        </p>
+
+    </header>
+
+
+    <div class="forms-final-grid">
+
+
+        <aside class="forms-info">
+
+            <span class="page-eyebrow">
+                FRONTEND DEMO
+            </span>
+
+            <h2>
+                Forms should not feel complicated.
+            </h2>
+
+            <p>
+                The page checks the most important
+                information before showing a
+                success state.
+            </p>
+
+
+            <ul class="forms-info-list">
+
+                <li>
+                    Required fields
+                </li>
+
+                <li>
+                    Email format
+                </li>
+
+                <li>
+                    Message length 10–500
+                </li>
+
+                <li>
+                    Password 8+ characters
+                </li>
+
+                <li>
+                    Matching passwords
+                </li>
+
+                <li>
+                    Country selection
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <div>
+
+
+            <!-- CONTACT FORM -->
+
+            <section class="form-final">
+
+                <h2>
+                    Contact us
+                </h2>
+
+                <p>
+                    Send a demonstration enquiry.
+                </p>
+
+
+                <form
+                    id="contact-form"
+                    novalidate
+                >
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-field">
+
+                            <label for="contact-name">
+                                Name
+                            </label>
+
+                            <input
+                                id="contact-name"
+                                type="text"
+                            >
+
+                            <p
+                                id="contact-name-error"
+                                class="error-text"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="contact-email">
+                                Email
+                            </label>
+
+                            <input
+                                id="contact-email"
+                                type="email"
+                            >
+
+                            <p
+                                id="contact-email-error"
+                                class="error-text"
+                            ></p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <div class="field-meta">
+
+                            <label for="contact-message">
+                                Message
+                            </label>
+
+                            <span id="message-count">
+                                0 / 500
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="contact-message"
+                            rows="6"
+                            maxlength="500"
+                        ></textarea>
+
+
+                        <p
+                            id="contact-message-error"
+                            class="error-text"
+                        ></p>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="btn"
+                            type="submit"
+                        >
+                            Submit enquiry
+                        </button>
+
+                        <button
+                            id="reset-contact"
+                            class="btn btn-outline"
+                            type="reset"
+                        >
+                            Reset
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="contact-success"
+                        class="success-message"
+                        role="status"
+                    >
+                        Demo successful.
+                        Your form passed frontend
+                        validation; no message was
+                        actually sent.
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- REGISTER -->
+
+            <section class="form-final">
+
+                <h2>
+                    Create an account
+                </h2>
+
+                <p>
+                    Registration demonstration.
+                </p>
+
+
+                <form
+                    id="register-form"
+                    novalidate
+                >
+
+
+                    <div class="form-field">
+
+                        <label for="register-name">
+                            Full name
+                        </label>
+
+                        <input
+                            id="register-name"
+                            type="text"
+                        >
+
+                        <p
+                            id="register-name-error"
+                            class="error-text"
+                        ></p>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="register-email">
+                            Email
+                        </label>
+
+                        <input
+                            id="register-email"
+                            type="email"
+                        >
+
+                        <p
+                            id="register-email-error"
+                            class="error-text"
+                        ></p>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-field">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <input
+                                id="password"
+                                type="password"
+                            >
+
+                            <p
+                                id="password-error"
+                                class="error-text"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="confirm-password">
+                                Confirm password
+                            </label>
+
+                            <input
+                                id="confirm-password"
+                                type="password"
+                            >
+
+                            <p
+                                id="confirm-password-error"
+                                class="error-text"
+                            ></p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="country">
+                            Country
+                        </label>
+
+                        <select id="country">
+
+                            <option value="">
+                                Select a country
+                            </option>
+
+                            <option>
+                                Kazakhstan
+                            </option>
+
+                            <option>
+                                Kyrgyzstan
+                            </option>
+
+                            <option>
+                                Uzbekistan
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+
+                        <p
+                            id="country-error"
+                            class="error-text"
+                        ></p>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="btn btn-tomato"
+                            type="submit"
+                        >
+                            Create account
+                        </button>
+
+                        <button
+                            id="reset-register"
+                            class="btn btn-outline"
+                            type="reset"
+                        >
+                            Reset
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="register-success"
+                        class="success-message"
+                        role="status"
+                    >
+                        Demo registration successful.
+                        No account was actually created.
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container footer-final">
+
+        <div>
+
+            <a
+                class="footer-brand"
+                href="index.html"
+            >
+                CookFromHome
+            </a>
+
+            <p>
+                Clear forms, clear feedback.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="recipes.html">
+                Recipes
+            </a>
+
+            <a href="planner.html">
+                Planner
+            </a>
+
+            <a href="pantry.html">
+                Pantry
+            </a>
+
+        </div>
+
+
+        <p>
+            Web Technologies · 2026
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/vendor/jquery-3.6.0.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/forms.js"></script>
+
+</body>
+</html>

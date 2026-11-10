@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Pantry | CookFromHome
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/final.css"
+    >
+
+</head>
+
+<body>
+
+<a
+    class="skip-link"
+    href="#main-content"
+>
+    Skip to main content
+</a>
+
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+            CookFrom<span>Home</span>
+        </a>
+
+
+        <div class="header-actions">
+
+            <nav
+                class="site-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="recipes.html">
+                    Recipes
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="tips.html">
+                    Tips
+                </a>
+
+                <a
+                    class="active"
+                    aria-current="page"
+                    href="pantry.html"
+                >
+                    Pantry
+                </a>
+
+                <a href="forms.html">
+                    Forms
+                </a>
+
+            </nav>
+
+
+            <button
+                id="global-theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-pressed="false"
+            >
+                ☾ Dark
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main
+    id="main-content"
+    class="page"
+>
+
+<div class="container">
+
+
+    <header class="page-heading">
+
+        <span class="page-eyebrow">
+            YOUR PANTRY
+        </span>
+
+        <h1 class="page-title">
+            Know what is already at home.
+        </h1>
+
+        <p class="page-subtitle">
+            Add ingredients, remove used
+            items, use quick-add buttons
+            and notice what should be
+            eaten soon.
+        </p>
+
+    </header>
+
+
+    <div class="pantry-final-grid">
+
+
+        <div>
+
+
+            <section
+                class="pantry-panel pantry-add-panel"
+            >
+
+                <span class="page-eyebrow">
+                    ADD FOOD
+                </span>
+
+                <h2 class="display">
+                    Add an ingredient
+                </h2>
+
+                <p>
+                    What is currently in
+                    your kitchen?
+                </p>
+
+
+                <form
+                    id="pantry-form"
+                    class="pantry-add-row"
+                >
+
+                    <input
+                        id="pantry-input"
+                        type="text"
+                        placeholder="For example: tomatoes"
+                    >
+
+                    <button
+                        class="btn btn-tomato"
+                        type="submit"
+                    >
+                        Add
+                    </button>
+
+                </form>
+
+
+                <div
+                    class="pantry-quick"
+                    aria-label="Quick add ingredients"
+                >
+
+                    <button
+                        class="quick-add"
+                        data-ingredient="Milk"
+                        type="button"
+                    >
+                        + Milk
+                    </button>
+
+                    <button
+                        class="quick-add"
+                        data-ingredient="Eggs"
+                        type="button"
+                    >
+                        + Eggs
+                    </button>
+
+                    <button
+                        class="quick-add"
+                        data-ingredient="Rice"
+                        type="button"
+                    >
+                        + Rice
+                    </button>
+
+                    <button
+                        class="quick-add"
+                        data-ingredient="Pasta"
+                        type="button"
+                    >
+                        + Pasta
+                    </button>
+
+                    <button
+                        class="quick-add"
+                        data-ingredient="Tomatoes"
+                        type="button"
+                    >
+                        + Tomatoes
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="pantry-feedback"
+                    aria-live="polite"
+                ></p>
+
+            </section>
+
+
+            <section class="pantry-panel">
+
+                <span class="page-eyebrow">
+                    CURRENT INGREDIENTS
+                </span>
+
+                <h2 class="display">
+                    Pantry list
+                </h2>
+
+                <p id="pantry-count">
+                    3 items
+                </p>
+
+
+                <p
+                    id="pantry-empty"
+                    hidden
+                >
+                    Your pantry is empty.
+                </p>
+
+
+                <ul
+                    id="pantry-list"
+                    class="pantry-list"
+                >
+
+                    <li class="pantry-item">
+
+                        <span>
+                            Eggs
+                        </span>
+
+                        <button
+                            class="pantry-remove"
+                            type="button"
+                        >
+                            Remove
+                        </button>
+
+                    </li>
+
+
+                    <li class="pantry-item">
+
+                        <span>
+                            Tomatoes
+                        </span>
+
+                        <button
+                            class="pantry-remove"
+                            type="button"
+                        >
+                            Remove
+                        </button>
+
+                    </li>
+
+
+                    <li class="pantry-item">
+
+                        <span>
+                            Rice
+                        </span>
+
+                        <button
+                            class="pantry-remove"
+                            type="button"
+                        >
+                            Remove
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </div>
+
+
+        <aside>
+
+
+            <section
+                class="pantry-panel expiry-panel"
+            >
+
+                <span class="page-eyebrow">
+                    USE SOON
+                </span>
+
+                <h2 class="display">
+                    Before it expires
+                </h2>
+
+
+                <div class="expiry-row">
+
+                    <span>
+                        Milk
+                    </span>
+
+                    <span class="expiry-badge">
+                        1 day
+                    </span>
+
+                </div>
+
+
+                <div class="expiry-row">
+
+                    <span>
+                        Spinach
+                    </span>
+
+                    <span class="expiry-badge">
+                        2 days
+                    </span>
+
+                </div>
+
+
+                <div class="expiry-row">
+
+                    <span>
+                        Yoghurt
+                    </span>
+
+                    <span class="expiry-badge">
+                        3 days
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <img
+                class="pantry-photo"
+                src="https://images.unsplash.com/photo-1543168256-418811576931?w=900&auto=format&fit=crop"
+                alt="Fresh pantry ingredients on a kitchen table"
+            >
+
+        </aside>
+
+    </div>
+
+
+    <section
+        class="pantry-panel faq-panel"
+    >
+
+        <span class="page-eyebrow">
+            PANTRY FAQ
+        </span>
+
+        <h2 class="display">
+            Quick answers.
+        </h2>
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                aria-expanded="false"
+                type="button"
+            >
+                What should I add here?
+            </button>
+
+            <div class="faq-answer">
+                Add ingredients you currently
+                have and may use for upcoming
+                meals.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                aria-expanded="false"
+                type="button"
+            >
+                Why track expiry dates?
+            </button>
+
+            <div class="faq-answer">
+                It helps you use older
+                ingredients first and reduce
+                unnecessary food waste.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                aria-expanded="false"
+                type="button"
+            >
+                Does the pantry save permanently?
+            </button>
+
+            <div class="faq-answer">
+                No. This is a frontend
+                demonstration and does not
+                use a backend database.
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container footer-final">
+
+        <div>
+
+            <a
+                class="footer-brand"
+                href="index.html"
+            >
+                CookFromHome
+            </a>
+
+            <p>
+                Use what you have.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="recipes.html">
+                Recipes
+            </a>
+
+            <a href="planner.html">
+                Planner
+            </a>
+
+            <a href="tips.html">
+                Tips
+            </a>
+
+        </div>
+
+
+        <p>
+            Web Technologies · 2026
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/vendor/jquery-3.6.0.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/pantry.js"></script>
+
+</body>
+</html>

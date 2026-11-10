@@ -1,0 +1,563 @@
+/* ==========================================
+   COOKFROMHOME - RECIPES PAGE
+   These classes only style recipes.html.
+   The team's shared header/footer use style.css.
+   ========================================== */
+
+/* 1. PAGE COLORS AND COMMON STYLES */
+.recipes-page {
+    --recipe-green: #426c53;
+    --recipe-dark: #263c2e;
+    --recipe-muted: #617066;
+    --recipe-bg: #f7f9f4;
+    --recipe-light: #e5efdf;
+
+    background: var(--recipe-bg);
+    color: var(--recipe-dark);
+    padding-bottom: 75px;
+}
+
+.recipes-page,
+.recipes-page * {
+    box-sizing: border-box;
+}
+
+.recipes-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.recipes-page a:focus-visible,
+.recipes-page summary:focus-visible {
+    outline: 3px solid var(--recipe-green);
+    outline-offset: 4px;
+}
+
+.recipes-eyebrow {
+    color: var(--recipe-green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+/* 2. HERO: TWO-COLUMN GRID */
+.recipes-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 52px;
+
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 24px;
+}
+
+.recipes-hero h1 {
+    font-size: clamp(2.2rem, 4.7vw, 3.5rem);
+    line-height: 1.16;
+    margin: 16px 0 18px;
+}
+
+.recipes-hero-copy > p {
+    max-width: 550px;
+    color: var(--recipe-muted);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.recipes-button {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 14px 25px;
+    border-radius: 12px;
+
+    background: var(--recipe-green);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.recipes-button:hover {
+    background: #294834;
+    transform: translateY(-3px);
+}
+
+/* FLEXBOX: small benefit badges */
+.recipes-perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 28px;
+}
+
+.recipes-perks span {
+    padding: 8px 12px;
+    border-radius: 22px;
+    background: var(--recipe-light);
+    font-size: 0.8rem;
+}
+
+.recipes-hero-photo {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+/* 3. CATALOG INTRO AND CATEGORY FILTERS */
+.recipes-catalog,
+.recipes-featured {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 24px;
+}
+
+.recipes-catalog {
+    scroll-margin-top: 24px;
+}
+
+.recipes-section-title {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.recipes-section-title h2 {
+    margin: 12px 0;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.25;
+}
+
+.recipes-section-title p {
+    color: var(--recipe-muted);
+    line-height: 1.7;
+}
+
+/* Hide native radio circles, but retain keyboard access. */
+.recipes-radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* FLEXBOX: category buttons wrap on small screens. */
+.recipes-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.recipes-filters label {
+    display: inline-block;
+    padding: 11px 20px;
+    border: 1px solid #cbd8c9;
+    border-radius: 25px;
+    background: white;
+    color: var(--recipe-dark);
+    cursor: pointer;
+    font-size: 0.9rem;
+
+    /* The category lifts when you hover over it. */
+    transition: transform 0.25s, box-shadow 0.25s,
+                background 0.25s, color 0.25s;
+}
+
+.recipes-filters label:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 17px rgba(38, 60, 46, 0.14);
+    background: var(--recipe-light);
+    border-color: var(--recipe-green);
+}
+
+/* :checked highlights the selected category. */
+#recipes-all:checked ~ .recipes-filters label[for="recipes-all"],
+#recipes-breakfast:checked ~ .recipes-filters label[for="recipes-breakfast"],
+#recipes-lunch:checked ~ .recipes-filters label[for="recipes-lunch"],
+#recipes-dinner:checked ~ .recipes-filters label[for="recipes-dinner"],
+#recipes-dessert:checked ~ .recipes-filters label[for="recipes-dessert"] {
+    background: var(--recipe-green);
+    border-color: var(--recipe-green);
+    color: white;
+}
+
+/* Show a visible focus outline when using a keyboard. */
+#recipes-all:focus-visible ~ .recipes-filters label[for="recipes-all"],
+#recipes-breakfast:focus-visible ~ .recipes-filters label[for="recipes-breakfast"],
+#recipes-lunch:focus-visible ~ .recipes-filters label[for="recipes-lunch"],
+#recipes-dinner:focus-visible ~ .recipes-filters label[for="recipes-dinner"],
+#recipes-dessert:focus-visible ~ .recipes-filters label[for="recipes-dessert"] {
+    outline: 3px solid var(--recipe-green);
+    outline-offset: 3px;
+}
+
+/* Filtering is handled by jQuery so search and category work together. */
+.recipes-search-controls {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 0 auto 12px;
+}
+
+.recipes-search-field {
+    flex: 1 1 280px;
+    max-width: 490px;
+}
+
+.recipes-search-field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: var(--recipe-dark);
+}
+
+#recipes-search {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #a9b8a5;
+    border-radius: 10px;
+    background: #fff;
+    font: inherit;
+    color: var(--recipe-dark);
+}
+
+#recipes-search:focus-visible,
+.recipes-clear-button:focus-visible {
+    outline: 3px solid var(--recipe-green);
+    outline-offset: 3px;
+}
+
+.recipes-clear-button {
+    border: 1px solid var(--recipe-green);
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: var(--recipe-green);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.recipes-clear-button:hover {
+    filter: brightness(0.92);
+}
+
+.recipes-results-count {
+    margin: 0 0 20px;
+    text-align: center;
+    color: var(--recipe-muted);
+}
+
+.recipes-no-results {
+    margin: 20px 0;
+    padding: 18px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #cbd8c9;
+    border-radius: 12px;
+    color: var(--recipe-dark);
+}
+
+.recipes-no-results[hidden] {
+    display: none;
+}
+
+/* 4. RECIPE CATALOG: EIGHT-CARD CSS GRID */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+}
+
+.recipes-card {
+    overflow: hidden;
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(24, 47, 33, 0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.recipes-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 11px 25px rgba(24, 47, 33, 0.13);
+}
+
+.recipes-card > img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #e5ece0;
+}
+
+.recipes-card-body {
+    padding: 20px;
+}
+
+.recipes-tag {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: var(--recipe-light);
+    color: var(--recipe-green);
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+.recipes-card h3 {
+    margin: 14px 0 8px;
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+.recipes-card-body > p {
+    min-height: 48px;
+    color: var(--recipe-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+/* FLEXBOX: cooking time, difficulty and servings. */
+.recipes-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 13px;
+    border-top: 1px solid #e9eee8;
+    color: var(--recipe-muted);
+    font-size: 0.79rem;
+}
+
+/* HTML <details> opens a recipe without JavaScript. */
+.recipes-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e9eee8;
+}
+
+.recipes-details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 13px;
+    border-radius: 10px;
+    background: var(--recipe-light);
+    color: var(--recipe-green);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.recipes-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.recipes-details summary::after {
+    content: "+";
+    margin-left: 12px;
+    font-size: 1.3rem;
+}
+
+.recipes-details[open] summary {
+    background: var(--recipe-green);
+    color: white;
+}
+
+.recipes-details[open] summary::after {
+    content: "−";
+}
+
+.recipes-details-body {
+    padding: 6px 2px 2px;
+}
+
+.recipes-details-body h4 {
+    margin: 20px 0 10px;
+    color: var(--recipe-green);
+    font-size: 1rem;
+}
+
+.recipes-details-body ul,
+.recipes-details-body ol {
+    padding-left: 20px;
+}
+
+.recipes-details-body li {
+    margin-bottom: 8px;
+    color: #405448;
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+/* 5. PASTA LOVE: A DIFFERENT FEATURED GRID LAYOUT */
+.recipes-featured-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 32px;
+    padding: 24px;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 5px 25px rgba(24, 47, 33, 0.06);
+}
+
+.recipes-featured-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.recipes-featured-copy {
+    padding: 10px 0;
+}
+
+.recipes-featured-copy h3 {
+    margin: 13px 0;
+    font-size: 1.8rem;
+}
+
+.recipes-featured-copy > p {
+    color: var(--recipe-muted);
+    line-height: 1.75;
+}
+
+.recipes-featured-copy h4 {
+    margin: 23px 0 12px;
+    font-size: 1.15rem;
+}
+
+/* GRID: three chef tip cards (one column on mobile). */
+.recipes-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.recipes-tip {
+    padding: 13px;
+    border: 1px solid #e4ece1;
+    border-radius: 12px;
+    background: var(--recipe-bg);
+}
+
+.recipes-tip span {
+    color: var(--recipe-green);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.recipes-tip h5 {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.recipes-tip p {
+    margin: 0;
+    color: var(--recipe-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.recipes-serving {
+    margin-top: 20px;
+}
+
+.recipes-text-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: var(--recipe-green);
+    font-weight: 700;
+    text-underline-offset: 3px;
+}
+
+/* 6. RESPONSIVE: TWO COLUMNS ON TABLETS */
+@media (max-width: 950px) {
+    .recipes-hero,
+    .recipes-featured-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .recipes-hero {
+        gap: 30px;
+        padding-top: 44px;
+    }
+
+    .recipes-hero-photo {
+        height: 320px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .recipes-featured-photo {
+        min-height: 0;
+        height: 290px;
+    }
+}
+
+/* 7. RESPONSIVE: ONE COLUMN ON PHONES */
+@media (max-width: 620px) {
+    .recipes-page {
+        padding-bottom: 35px;
+    }
+
+    .recipes-hero,
+    .recipes-catalog,
+    .recipes-featured {
+        padding: 36px 18px;
+    }
+
+    .recipes-hero-photo {
+        height: 230px;
+    }
+
+    .recipes-grid,
+    .recipes-tip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recipes-filters {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .recipes-filters label {
+        padding: 10px 13px;
+        font-size: 0.85rem;
+    }
+
+    .recipes-card-body > p {
+        min-height: 0;
+    }
+
+    .recipes-featured-layout {
+        padding: 14px;
+        gap: 18px;
+    }
+}
+
+/* Motion accessibility: disable lift animation when requested. */
+@media (prefers-reduced-motion: reduce) {
+    .recipes-filters label,
+    .recipes-button,
+    .recipes-card {
+        transition: none;
+    }
+}
